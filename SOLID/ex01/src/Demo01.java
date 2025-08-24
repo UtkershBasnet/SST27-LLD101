@@ -2,6 +2,9 @@
 
 public class Demo01 {
     public static void main(String[] args) {
-        new OrderService().checkout("a@shop.com", 100.0);
+        EmailClient emailClient = new EmailClient();
+        CurrentTax currentTax = new CurrentTax();
+        CurrentDB currentDB = new CurrentDB();
+        new OrderService(emailClient, currentTax, currentDB).checkout("a@shop.com", 100.0); 
     }
 }
