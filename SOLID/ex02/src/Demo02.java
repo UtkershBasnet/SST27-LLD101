@@ -1,5 +1,7 @@
 public class Demo02 {
     public static void main(String[] args) {
-        new Player().play(new byte[]{1,2,3,4});
+        CurrentDecoder CurrentDecoder = new CurrentDecoder();
+        MemoryCache MemoryCache = new MemoryCache();
+        new Player(CurrentDecoder, MemoryCache).play(new byte[]{1,2,3,4});
     }
 }
