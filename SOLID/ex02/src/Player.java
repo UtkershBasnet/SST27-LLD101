@@ -1,5 +1,4 @@
 public class Player {
-    private Frame last;
     Decoder decoder;
     Cache cache;
     public Player(Decoder decoder, Cache cache){ 
