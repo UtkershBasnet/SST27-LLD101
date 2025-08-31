@@ -12,10 +12,14 @@ import java.util.Properties;
 public class AppSettings implements Serializable {
     private final Properties props = new Properties();
 
-    public AppSettings() { } // should not be public for true singleton
+    private AppSettings() { } // should not be public for true singleton
+
+    private static class Holder {
+        private static final AppSettings INSTANCE = new AppSettings();
+    }
 
     public static AppSettings getInstance() {
-        return new AppSettings(); // returns a fresh instance (bug)
+        return Holder.INSTANCE;
     }
 
     public void loadFromFile(Path file) {
@@ -28,5 +32,9 @@ public class AppSettings implements Serializable {
 
     public String get(String key) {
         return props.getProperty(key);
+    }
+
+    private Object readResolve() {
+        return getInstance();
     }
 }
