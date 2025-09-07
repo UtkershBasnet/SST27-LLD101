@@ -1,0 +1,5 @@
+id,email,displayName
+u1,alice@example.com,Alice
+u2,,Bob
+u3,bad-email,Charlie
+u4,bob@example.com,Bob
