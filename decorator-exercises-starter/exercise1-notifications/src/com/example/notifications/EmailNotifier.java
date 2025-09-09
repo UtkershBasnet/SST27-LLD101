@@ -1,5 +1,3 @@
-package com.example.notifications;
-
 /**
  * Existing notifier — sends notifications via Email.
  * You should not modify this class.
